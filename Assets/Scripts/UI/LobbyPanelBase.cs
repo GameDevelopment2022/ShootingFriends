@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LobbyPanelBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Lobby Panel Base Variables")] public PanelType panelType;
+    public Animator panelAnimator;
+
+    public string InAnim = "In";
+    public string OutAnim = "Out";
+
+    [Header("Actions")] 
+    [SerializeField] protected LobbyPanelChangeEvent LobbyPanelChangeEvent;
+   
+
+    public void TurnOnPanel()
     {
-        
+        panelAnimator.Play(InAnim);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TurnOffPanel()
     {
-        
+        panelAnimator.Play(InAnim);
+        StartCoroutine(Utils.PerformActionAfterCertainTime(panelAnimator.GetCurrentAnimatorClipInfo(0).Length,
+            () => { gameObject.SetActive(false); }));
     }
 }
