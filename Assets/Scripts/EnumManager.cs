@@ -5,3 +5,9 @@ public enum PanelType
     MiddleSectionPanel,
     LoadingPanel
 }
+
+public enum  InputButtons
+{
+    None = 0,
+    Jump
+}

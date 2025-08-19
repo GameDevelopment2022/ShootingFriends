@@ -39,7 +39,7 @@ public class NetworkController : MonoBehaviour, INetworkRunnerCallbacks
     {
         StartGame(gameModeData.Value, roomName.Value);
     }
-    
+
     private void CancelGame()
     {
         networkRunnerInstance.Shutdown();
@@ -56,7 +56,7 @@ public class NetworkController : MonoBehaviour, INetworkRunnerCallbacks
 
         networkRunnerInstance.AddCallbacks(this);
 
-        // networkRunnerInstance.ProvideInput = true;
+        networkRunnerInstance.ProvideInput = true;
 
         var startGameArgs = new StartGameArgs
         {

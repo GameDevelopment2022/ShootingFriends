@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Obvious.Soap;
-using Obvious.Soap.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
