@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using Obvious.Soap;
 
 public class PlayerController : NetworkBehaviour, IBeforeUpdate
 {
@@ -13,14 +14,16 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     private Rigidbody2D rb;
 
     public PlayerDataAsset PlayerDataAsset;
-
-
+    
     [Networked] private NetworkButtons buttons { get; set; }
 
+    [SerializeField] private GameObject localCamObject;
 
     public override void Spawned()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        SetLocalPlayerObj();
     }
 
     public void BeforeUpdate()
@@ -45,6 +48,11 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         }
 
         buttons = input.NetworkButtons;
+    }
+
+    private void SetLocalPlayerObj()
+    {
+        localCamObject.SetActive(Runner.LocalPlayer == Object.HasInputAuthority);
     }
 
     public override void FixedUpdateNetwork()

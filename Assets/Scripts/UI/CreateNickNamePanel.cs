@@ -1,3 +1,5 @@
+using Fusion;
+using Obvious.Soap;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +30,11 @@ public class CreateNickNamePanel : LobbyPanelBase
         if (nickNameInput.text.Length < minCharactersForNickName)
             return;
 
+        UserData.Instance.playerName = nickNameInput.text;
+
         LobbyPanelChangeEvent?.Raise(PanelType.MiddleSectionPanel);
+
+
         //Change Panel
     }
 }
