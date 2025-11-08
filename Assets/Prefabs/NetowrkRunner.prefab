@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7166655012559080854}
   - component: {fileID: 7166655012559080855}
-  - component: {fileID: 7166655012559080852}
+  - component: {fileID: -945140491132785699}
   m_Layer: 0
   m_Name: NetowrkRunner
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: -1199893898, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7166655012559080852
+--- !u!114 &-945140491132785699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
